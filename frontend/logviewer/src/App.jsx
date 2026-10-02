@@ -13,7 +13,6 @@ function App() {
     if(isRunning){
       return;
     }
-    setLogs([]);
     const url=`http://localhost:5000/api/logs?name=${encodeURIComponent(userName)}`
     setIsRunning(true);
     const evntsrc=new EventSource(url);
