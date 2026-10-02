@@ -1,8 +1,13 @@
-/* App.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 .app-container {
   background-color: #121212;
   color: #ffffff;
   font-family: 'Courier New', Courier, monospace;
+  font-weight: 50;
   padding: 20px;
   min-height: 100vh;
   min-width: 100vw;
@@ -16,15 +21,55 @@
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
-  height: 10vh;
   position: relative;
   align-items: center;
-  gap: 200px;
+  gap: 10vw;
+}
+input {
+  padding: 10px 14px;
+  font-size: 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  background-color: #f8fafc;
+  color: #0f172a;
+  margin-right: 20px;
+}
+input:hover {
+  border-color: #121212;
+}
+input:focus {
+  border-color: #3b82f6;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+.Logtype {
+  display: flex;
+  flex-direction: column;
+  align-items:end;
+}
+.select-dropdown {
+  width: 150px;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+  margin: 10px;
+}
+
+.select-dropdown option {
+  padding: 4px 8px;
 }
 .buttons {
   display: flex;
 }
-.control-panel button {
+.control-panel buttons{
+  margin: 20px;
+}
+button {
   background-color: #1f1f1f;
   color: white;
   border: 1px solid #333;
@@ -34,7 +79,7 @@
   border-radius: 4px;
 }
 
-.control-panel button:hover {
+button:hover {
   background-color: #2a2a2a;
 }
 
@@ -47,9 +92,37 @@
   overflow-y: scroll;
   border: 1px solid #333;
   border-radius: 5px;
+  margin-bottom: 50px;
+
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #444 #1e1e1e; /* For Firefox (thumb track) */
+}
+/*used ai for scroll bar designing
+/* For Chrome, Edge, and Safari */
+.terminal-window::-webkit-scrollbar {
+  width: 8px; /* Width of the vertical scrollbar */
 }
 
+.terminal-window::-webkit-scrollbar-track {
+  background: #121212; /* Background color of the scrollbar track */
+  border-radius: 4px;
+}
+
+.terminal-window::-webkit-scrollbar-thumb {
+  background: #444; /* Color of the movable scrollbar handle */
+  border-radius: 4px;
+}
+
+.terminal-window::-webkit-scrollbar-thumb:hover {
+  background: #666; /* Color when you hover over the scrollbar handle */
+}
+
+.custom-log-div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
 .log-line {
-  border-bottom: 1px solid #2a2a2a;
   padding: 4px 0;
 }
