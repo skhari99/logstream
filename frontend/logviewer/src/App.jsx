@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './App.css'
-import { useEffect } from 'react';
+
 
 function App() {
   const [logs,setLogs]=useState([]);
@@ -19,7 +19,10 @@ function App() {
   const [customlog,setCustomlog]=useState("");
 
  
-
+  const scrollRef = useRef(null);
+  useEffect(() => {
+    scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [logs]);
   const handleSelect=(event)=>{   // function to handle multi selection 
     const values=Array.from(event.target.selectedOptions).map((tempvalue)=>{// takes the values in selectedOptions, make an array of them and get the actual values by mapping through array
       return tempvalue.value;
@@ -61,7 +64,7 @@ function App() {
     if(customlog!=""){
       
       setLogs((prevLogs)=>{
-        return [customlog,...prevLogs];
+        return [...prevLogs,customlog];
       })
       setCustomlog("");
       
@@ -134,6 +137,7 @@ function App() {
             </div>
           ))
         )}
+        <div ref={scrollRef} />
       </div>
       <div className="custom-log-div">
         <label>Input log string:</label>
