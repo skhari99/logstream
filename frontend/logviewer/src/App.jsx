@@ -19,10 +19,10 @@ function App() {
   const [customlog,setCustomlog]=useState("");
 
  
-  const scrollRef = useRef(null);
-  useEffect(() => {
-    scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [logs]);
+  // const scrollRef = useRef(null);
+  // useEffect(() => {
+  //   scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
+  // }, [logs]);
   const handleSelect=(event)=>{   // function to handle multi selection 
     const values=Array.from(event.target.selectedOptions).map((tempvalue)=>{// takes the values in selectedOptions, make an array of them and get the actual values by mapping through array
       return tempvalue.value;
@@ -64,7 +64,7 @@ function App() {
     if(customlog!=""){
       
       setLogs((prevLogs)=>{
-        return [...prevLogs,customlog];
+        return [customlog,...prevLogs];
       })
       setCustomlog("");
       
@@ -97,7 +97,7 @@ function App() {
   },[eventSource]);
   return (
     <div className='app-container'>
-      <h1><b>Logstream</b></h1>
+      <h1 className='Head'><b>Logstream</b></h1>
       <div className='control-panel'>
           {(name==='')?(
             <form onSubmit={handleSubmit}>
@@ -137,7 +137,7 @@ function App() {
             </div>
           ))
         )}
-        <div ref={scrollRef} />
+        {/* <div ref={scrollRef} /> */}
       </div>
       <div className="custom-log-div">
         <label>Input log string:</label>

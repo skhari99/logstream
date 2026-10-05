@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
 }
+
 .app-container {
   background-color: #121212;
   color: #ffffff;
@@ -20,7 +21,7 @@
   background-color: #121212;
   display: flex;
   gap: 10px;
-  margin-bottom: 20px;
+  margin: 20px;
   position: relative;
   align-items: center;
   gap: 10vw;

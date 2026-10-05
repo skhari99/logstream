@@ -1,16 +1,31 @@
-# React + Vite
+# 🚀 LogStream Pro 📋✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, real-time log-streaming dashboard built with React and Node.js/Express, featuring live Server-Sent Events (SSE), session labeling, client-side filtering, and automatic terminal scrolling.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Core
+* **Real-Time Log Streaming:** Stream live mock system logs from an Express backend to the React frontend using standard-compliant Server-Sent Events (`text/event-stream`).
+* **Session Labeling & Management:** Assign custom names to label each session.
+* **Dynamic Client-Side Filtering:** Filter incoming logs instantly by log levels without breaking or re-establishing the underlying socket pipe connection.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Frontend:**
+  * React.js (Vite)
+* **Backend:**
+  * Node.js
+  * Express.js
+  * SSE Middleware
 
-## Expanding the ESLint configuration
+## Preview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Control Panel:** 
+  * A simple toolbar with a session name input, a filter dropdown, and Start/Stop buttons.
+* **Terminal Window:** 
+  * A clean, dark-themed console that shows live, timestamped logs with custom scrollbars.
+
+## Live demo 
+* [Click to View](https://drive.google.com/file/d/1B8jT-4d2_1QmMOqsonS0Tm5e0Wx1FHxW/view?usp=sharing)
+
+#
